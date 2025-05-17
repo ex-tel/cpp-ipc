@@ -47,6 +47,7 @@ cxx_library(
     #    PLATFORM_LINUX:   ["pthread", "rt"],     # matches CMake's $<…>:pthread;rt
     #    "//conditions:default": [],              # Windows gets none
     #},
+    exported_headers = {h.removeprefix("include/"): h for h in HEADERS_PUBLIC},
 
     # ------------- visibility -------------
     visibility = ["PUBLIC"],
